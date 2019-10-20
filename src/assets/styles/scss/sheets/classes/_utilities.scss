@@ -1,0 +1,21 @@
+.block {
+  display: block;
+  @include animation-duration(.3s);
+  @include animation-name(slideInLeft);
+  @include animation-delay(.3s);
+  @include animation-fill-mode(forwards);
+  transition-delay: 1s;
+}
+
+.hidden {
+  transition-delay: 1s;
+  @include animation-duration(.3s);
+  @include animation-name(slideOut);
+  @include animation-delay(.3s);
+  @include animation-fill-mode(forwards);
+  display: none;
+}
+
+.mt-5 {
+  margin-top: 5em;
+}

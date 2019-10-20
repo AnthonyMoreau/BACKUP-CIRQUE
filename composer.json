@@ -1,0 +1,29 @@
+{
+
+    "autoload": {
+        "psr-4": {
+            "AppCirque\\" : "src"
+        }
+    },
+    "name": "nico/app-cirque",
+    "license": "",
+    "require": {
+        "fzaninotto/faker": "^1.8",
+      "imagine/imagine": "*",
+      "ext-pdo": "*",
+      "ext-json": "*"
+    }
+    ,
+    "require-dev": {
+        "phpunit/phpunit": "^8.3",
+        "roave/security-advisories": "dev-master",
+        "kint-php/kint": "^3.2"
+    },
+    "authors": [
+        {
+            "name": "someone",
+            "email": "some@one.com"
+        }
+    ]
+
+}

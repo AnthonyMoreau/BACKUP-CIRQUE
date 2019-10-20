@@ -1,0 +1,11 @@
+.show-article {
+  background-color: #333333;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.show-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

@@ -1,0 +1,51 @@
+.form-container {
+
+}
+
+
+.contact-form {
+  background-color: #7b6e78;
+  display: grid;  grid-template-columns: .5fr 1fr 1fr .5fr;
+  grid-template-rows: 0.2fr 1fr 0.5fr;
+  grid-template-areas: ". . . ."
+  ". contact-form-info contact-form-message ."
+  ". . . .";
+  label {
+    font-size: 1.2em;
+  }
+  .contact-form-submit {
+    width: 28rem;
+    padding: .5em;
+    font-size: 1.5em;
+  }
+  .contact-form-info {
+    grid-area: contact-form-info;
+  }
+  .contact-form-message {
+    grid-area: contact-form-message;
+  }
+}
+
+
+.contact-form-input {
+  display: block;
+  padding: .5em;
+  margin-top: .5em;
+  margin-bottom: 1em;
+  background-color: whitesmoke;
+  font-size: 1.5em;
+  width: 20em;
+}
+
+.contact-textarea {
+  display: block;
+  margin-top: .5em;
+  padding: .5em;
+  margin-bottom: 1em;
+  width: 27em;
+  background-color: whitesmoke;
+  font-size: 1.5em;
+  @include border-radius(6px);
+}
+
+

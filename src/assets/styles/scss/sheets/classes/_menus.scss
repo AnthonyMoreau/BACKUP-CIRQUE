@@ -1,0 +1,72 @@
+
+// navbar dropdown générique
+// basic dropdown navbar
+
+.basic-drop-nav {
+  background-color: $nav-def-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  font-family: $font-Mont;
+  font-size: 1em;
+  position: sticky;
+  top: 0;
+    a {
+      text-decoration: none; // ajouter au main
+      padding: 1em;
+      color: $nav-def-col;
+      @include transition(.8s);
+      &:hover {
+          background-color: $nav-def-hover-bg;
+        }
+    }
+      .dropbtn {
+        @include transition(.8s);
+      }
+}
+
+.basic-drop-nav-left {
+  @extend .basic-drop-nav;
+  justify-content: left;
+}
+
+// dropdown nav purple scheme pour test
+
+.purple-drop-nav {
+  @extend .basic-drop-nav;
+  background-color: $nav-purple-bg;
+    a {
+      color: $nav-purple-col;
+      &:hover {
+        background-color: $nav-purple-hover-bg;
+      }
+    }
+  .dropbtn {
+    color: $nav-purple-col;
+      &:hover {
+        background-color: $nav-purple-hover-bg;
+      }
+  }
+  .dropdown-content {
+    background-color: $nav-purple-bg;
+    a {
+      color: $nav-purple-col;
+    }
+  }
+}
+
+// vertical
+
+.active {
+  background-color: red;
+  color: darkgray !important;
+}
+
+.button-active {
+  background-color: red;
+}
+
+
+
+

@@ -1,0 +1,160 @@
+
+/**
+ * gérer les vendor prefixes
+ * dealing with vendor prefixes
+ */
+
+// animations, transitions
+
+@mixin transform($transform) {
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  -o-transform: $transform;
+  -moz-transform: $transform;
+  transform: $transform;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// @include keyframes(animate) {
+//  50% {
+//    transform: rotate(90deg);
+//  }
+//  100% {
+//    transform: rotate(-90deg);
+//  }
+//}
+
+@mixin animation-name($value...){
+  -o-animation-name: $value;
+  -moz-animation-name: $value;
+  -webkit-animation-name: $value;
+  animation-name: $value;
+}
+
+@mixin animation-delay($value...){
+  -o-animation-delay: $value;
+  -moz-animation-delay: $value;
+  -webkit-animation-delay: $value;
+  animation-delay: $value;
+}
+
+@mixin animation-duration($value...){
+  -o-animation-duration: $value;
+  -moz-animation-duration: $value;
+  -webkit-animation-duration: $value;
+  animation-duration: $value;
+}
+
+@mixin animation-timing-function($value...){
+  -o-animation-timing-function: $value;
+  -moz-animation-timing-function: $value;
+  -webkit-animation-timing-function: $value;
+  animation-timing-function: $value;
+}
+
+@mixin animation-iteration-count($value...){
+  -o-animation-iteration-count: $value;
+  -moz-animation-iteration-count: $value;
+  -webkit-animation-iteration-count: $value;
+  animation-iteration-count: $value;
+}
+
+@mixin animation-fill-mode($value...){
+  -o-animation-fill-mode: $value;
+  -moz-animation-fill-mode: $value;
+  -webkit-animation-fill-mode: $value;
+  animation-fill-mode: $value;
+}
+
+@mixin animation-direction($value...){
+  -o-animation-direction: $value;
+  -moz-animation-direction: $value;
+  -webkit-animation-direction: $value;
+  animation-direction: $value;
+}
+
+// animation shortand à revoir
+
+@mixin animation($name, $duration, $timing, $delay, $count, $fill){
+  -o-animation: $name, $duration, $timing, $delay, $count, $fill;
+  -moz-animation: $name, $duration, $timing, $delay, $count, $fill;
+  -webkit-animation: $name, $duration, $timing, $delay, $count, $fill;
+  animation: $name, $duration, $timing, $delay, $count, $fill;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition-delay: $value;
+  transition: $value;
+}
+
+@mixin transition-delay($value) {
+  -webkit-transition-delay: $value;
+  -moz-transition-delay: $value;
+  transition-delay: $value;
+}
+
+@mixin transform($value) {
+  -o-transform: $value;
+  -ms-transform: $value;
+  -webkit-transform: $value;
+  transform: $value;
+}
+@mixin transform-origin ($value) {
+  -o-transform-origin: $value;
+  -ms-transform-origin: $value;
+  -webkit-transform-origin: $value;
+  transform-origin: $value;
+}
+
+// border radius
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// box-shadow
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+
+
+// perspective
+
+@mixin perspective($value) {
+  -webkit-perspective: $value;
+  -moz-perspective: $value;
+  perspective: $value;
+}
+
+@mixin perspective($value) {
+  -webkit-perspective-origin: $value;
+  -moz-perspective-origin: $value;
+  perspective-origin: $value;
+}
+
+// opacité pour I8
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}

@@ -1,0 +1,346 @@
+/*
+* feuilles admin générale
+*/
+
+$adminbg: #C9C9C9;
+$adminfont: "Montserrat", sans-serif;
+
+.admin-content {
+  font-family: $adminfont;
+  background-color: $adminbg;
+}
+
+/*
+* login
+*/
+
+.login-admin {
+  display: grid;
+  grid-template-rows: 20vh 40vh 20vh;
+  grid-template-columns: repeat(3, 1fr );
+  grid-row-gap: 3em;
+  grid-template-areas:
+          ". title ."
+          ". form ."
+          ". notices .";
+  justify-content: center;
+  align-content: flex-start;
+  background-color: $adminbg;
+  height: 100vh;
+  padding-top: 6em;
+  .login-admin-header {
+    grid-area: title;
+    text-align: center;
+    place-self: center;
+    font-size: 2em;
+    line-height: 1.5em;
+    p {
+      font-size: .8em;
+    }
+    button {
+      font-size: 1em;
+      padding: .5em;
+      border: none;
+      @include transition(.3s);
+      &:hover {
+        background-color: #4e8b6a;
+        color: white;
+      }
+    }
+  }
+}
+
+.notices {
+  grid-area: notices;
+  font-size: 1.2em;
+  margin: auto;
+  padding: 20px;
+  color: red;
+}
+
+.admin-login-form {
+  grid-area: form;
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  height: auto;
+  width: 500px;
+  padding: 1em;
+  input {
+    display: block;
+    padding: .5em;
+    font-size: 1.2em;
+    width: 20em;
+  }
+  label {
+    font-size: 1.2em;
+    margin: 10px 0 10px 0;
+  }
+  #admin-login-submit {
+    margin-top: 30px;
+    width: auto;
+    border: none;
+    @include transition(.3s);
+    &:hover {
+      background-color: #4e8b6a;
+      color: white;
+    }
+  }
+}
+
+
+/*
+* dashboard
+*/
+
+.dashboard-container {
+  display: grid;
+  height: 100vh;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+  grid-template-areas: "dashboard-welcome dashboard-welcome dashboard-welcome dashboard-welcome log-out"
+  ". manage-content-1 manage-content-2 manage-content-3 ."
+  ". manage-users manage-planning emailing ."
+  ". . . . .";
+}
+
+.dashboard-welcome {
+  grid-area: dashboard-welcome;
+  display: grid;
+  font-size: 3em;
+  place-items: center;
+  background-color: #f6f078;
+}
+
+.manage-content-1 {
+  grid-area: manage-content-1;
+}
+
+.manage-content-2 {
+  grid-area: manage-content-2;
+}
+
+.manage-content-3 {
+  grid-area: manage-content-3;
+}
+
+.manage-users {
+  grid-area: manage-users;
+  height: 20em;
+  width: auto;
+  background-color: white;
+}
+
+.manage-planning {
+  grid-area: manage-planning;
+  height: 20em;
+  width: auto;
+  background-color: white;
+}
+
+.emailing {
+  grid-area: emailing;
+  height: 20em;
+  width: auto;
+  background-color: white;
+}
+
+.manage-box {
+  height: 20em;
+  width: 25em;
+  background-color: $adminbg;
+  .box-header{
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 3em;
+    height: 3em;
+    border-bottom: 1px solid black;
+  }
+  .box-content {
+    padding: 2em;
+  }
+  .dash-form {
+    margin-top: 10px;
+    > input, select  {
+      display: block;
+      max-width: 350px;
+      min-width: 350px;
+      margin: 10px auto;
+      height: 4em;
+    }
+  }
+}
+
+.log-out {
+  grid-area: log-out;
+  margin-right: 10px;
+  margin-top: 5px;
+  position: relative;
+  input {
+    font-size: 1.2em;
+    padding: .5em;
+    background-color: #ff7770;
+    color: white;
+    border: none;
+    @include transition(.8s);
+    &:hover {
+      background-color: red;
+    }
+  }
+}
+
+#dashboard-notices {
+  grid-area: log-out;
+  color: blue;
+  font-size: 1em;
+  position: absolute;
+  top: 10%;
+  right: 2%;
+}
+
+/*
+* ajout d'articles
+* new-article
+ */
+
+.new-article {
+  display: grid;
+  grid-template-rows: 20% 80%;
+  grid-template-areas:
+          "title"
+          "form";
+  height: auto;
+  padding: 3em;
+
+}
+
+.new-article-title {
+  grid-area: title;
+  text-align: center;
+  font-size: 3em;
+}
+
+
+.add-article {
+  grid-area: form;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text pics" ;
+  justify-items: center;
+  textarea {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    padding: .3em;
+    resize: none;
+    width: 50em;
+  }
+  .article-content {
+  }
+  .toolbox {
+    // background-color: #4e8b6a;
+    background-color: rgb(156, 156, 156);
+    padding: .5em;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 730px;
+    button {
+      color: #333333;
+      font-size: 1em;
+      min-width: 120px;
+      height: 30px;
+      vertical-align: middle;
+      @include transition(.5s);
+      &:hover {
+        background-color: #e3e3e3;
+        border: #4e8b6a;
+      }
+    }
+    span {
+      font-size: 2em;
+      vertical-align: middle;
+    }
+    .posted-on {
+      font-size: 1em;
+      color: white;
+      vertical-align: middle;
+    }
+  }
+}
+
+.toolbox-modal {
+  background-color: rgba(156,156,156,0.67);
+  width: 300px;
+  height: auto;
+  padding: 1em;
+  input {
+    display: block;
+  }
+}
+
+/*
+* ajout d'images container grid
+ */
+
+.add-pics {
+  grid-area: pics;
+  display: grid;
+  align-content: flex-start;
+}
+
+.drag-container {
+  grid-area: headline;
+}
+
+
+.drop_zone {
+  width: 50em;
+  min-height: 10em;
+  border: dashed 1px black;
+  padding: 1em;
+}
+
+.gallery {
+  display: grid;
+  background-color: rgb(156, 156, 156);
+  justify-content: space-evenly;
+  grid-template-columns: repeat(3, 110px);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  min-height: 10em;
+  padding: 1em;
+  border: 1px dashed black;
+  @include transition(.5s);
+  img {
+    max-width: 110px;
+  }
+}
+.is-dropped {
+  background-color: #4e8b6a;
+}
+
+.thumbnails{
+  background-color: rgba(0, 0, 0, 0.37);
+  padding: 1em;
+}
+
+.drop-here {
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+
+.dd-del {
+  outline-style: none;
+  background-color: rgba(0, 0, 0, 0.41);
+  color: white;
+  border: none;
+}
+
+.dd-del:hover {
+  background-color: black;
+}
+
+

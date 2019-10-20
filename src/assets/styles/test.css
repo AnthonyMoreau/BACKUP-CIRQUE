@@ -1,0 +1,46 @@
+.block{
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0);
+}
+
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(-500px);
+}
+
+.is-animating{
+    transition: 1s;
+    opacity: 0;
+}
+.animating{
+    transition: 1s;
+    opacity: 1;
+}
+
+.green{
+    background-color: green;
+}
+
+
+
+.form-control{
+    grid-area: form-control;
+}
+
+
+
+
+
+.zetitile {
+    text-align: center;
+    align-self: center;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 4em;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+}
+
+/********************* DROP ZONE ***********************/

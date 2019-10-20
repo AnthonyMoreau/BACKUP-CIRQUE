@@ -1,0 +1,107 @@
+.container {
+  width: 80%;
+  margin: auto;
+  font-family: $font-barriecito;
+  font-size: 1.5em;
+  overflow: hidden;
+}
+
+/*img {
+  width: 100%;
+  height: 100%;
+}*/
+
+.back-to-normal {
+  font-size: 1em;
+  font-family: 'Courier New', Courier, monospace;
+  opacity: 0;
+  @include animation-duration(1s);
+  @include animation-name(bounceIn);
+  @include animation-delay(6s);
+  @include animation-fill-mode(forwards);
+}
+
+.logoContainer {
+  margin: 10em auto;
+  background-color: bisque;
+  height: 442px;
+  .face {
+    position: relative;
+    left: 10em;
+    width: 442px;
+    height: 442px;
+    @include transform(translateY(-1000px));
+    @include animation-name(fallIn);
+    @include animation-duration(3s);
+    @include animation-delay(.2s);
+    @include animation-timing-function(ease-in-out);
+    @include animation-fill-mode(forwards);
+  }
+  .hat {
+    position: absolute;
+    top: -130px;
+    left: 130px;
+    @include transform(translateY(-1000px));
+    @include animation-name(fallIn, jump);
+    @include animation-duration(3s, 1.5s);
+    @include animation-timing-function(ease-in-out, ease-in-out);
+    @include animation-delay(.3s, 4.2s);
+    @include animation-fill-mode(forwards, forwards);
+  }
+  .stache {
+    position: absolute;
+    bottom: 130px;
+    left: calc(50% - 144px);
+    animation: swing .2s 3s ease-in-out 6;
+    &:hover {
+      animation: swing .3s ease-in-out infinite;
+    }
+  }
+}
+
+
+/* text */
+/*
+*a placer dans le bon ordre !!
+*/
+
+.message456 {
+  position: relative;
+  height: 2em;
+  left: 50%;
+  top: calc(-50% - 2em);
+  line-height: 3em;
+}
+
+.error-message :nth-child(even) {
+  opacity: 0;
+  @include animation-duration(1s);
+  @include animation-name(pop);
+  @include animation-delay(4.5s);
+  @include animation-fill-mode(forwards);
+}
+
+.error-message :nth-child(odd) {
+  opacity: 0;
+  @include animation-duration(3s);
+  @include animation-name(pop);
+  @include animation-delay(4.5s);
+  @include animation-fill-mode(forwards);
+}
+
+/*
+*a placer dans le bon ordre !!
+*/
+
+
+.error-message :first-child {
+  color: red ;
+  opacity: 0;
+  @include animation-duration(.75s);
+  @include animation-name(pop);
+  @include animation-delay(4s);
+  @include animation-fill-mode(forwards);
+}
+
+/* keyframes */
+

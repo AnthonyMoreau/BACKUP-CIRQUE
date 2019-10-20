@@ -1,0 +1,5 @@
+@mixin dd ($color: black, $background: rgba(255,0,0,0.12)) {
+  border: 2px solid $color;
+  background-color: $background;
+}
+
